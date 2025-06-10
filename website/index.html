@@ -5,26 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Hagoi Wallet - Solana wallet dengan keamanan tingkat militer dan transaksi instan. Kelola aset Solana Anda dengan aman dan mudah.">
+    <meta name="description" content="Hagoi Wallet - Solana wallet with military-grade security and instant transactions. Manage your Solana assets safely and easily.">
     <meta name="keywords" content="Hagoi Wallet, Solana wallet, cryptocurrency wallet, blockchain wallet, crypto security, Solana crypto, digital wallet">
     <meta name="author" content="Hagoi Teknologi Maju">
     <meta name="robots" content="index, follow">
-    
+
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Hagoi Wallet - Solana Wallet dengan Keamanan Tingkat Militer">
-    <meta property="og:description" content="Kelola aset Solana Anda dengan aman menggunakan Hagoi Wallet. Dilengkapi dengan enkripsi tingkat militer dan transaksi instan.">
+    <meta property="og:title" content="Hagoi Wallet - Solana Wallet with Military-Grade Security">
+    <meta property="og:description" content="Manage your Solana assets securely with Hagoi Wallet. Equipped with military-grade encryption and instant transactions.">
     <meta property="og:image" content="assets/logo.svg">
-    <meta property="og:url" content="https://hagoiwallet.com">
     <meta property="og:type" content="website">
-    
+
     <!-- Twitter Card Meta Tags --> 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Hagoi Wallet - Solana Wallet dengan Keamanan Tingkat Militer">
-    <meta name="twitter:description" content="Kelola aset Solana Anda dengan aman menggunakan Hagoi Wallet. Dilengkapi dengan enkripsi tingkat militer dan transaksi instan.">
+    <meta name="twitter:title" content="Hagoi Wallet - Solana Wallet with Military-Grade Security">
+    <meta name="twitter:description" content="Manage your Solana assets securely with Hagoi Wallet. Equipped with military-grade encryption and instant transactions.">
     <meta name="twitter:image" content="assets/logo.svg">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://hagoiwallet.com">
+
     
     <title>Hagoi Wallet - Solana Wallet</title>
     <!-- Favicon -->
@@ -704,54 +701,6 @@
                 transform: translate(var(--tx), var(--ty));
                 opacity: 0;
             }
-        }
-        
-        .data-trail {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, rgba(0, 245, 160, 0.5) 0%, transparent 70%);
-            animation: trail-fade 1s linear infinite;
-        }
-        
-        .golden-particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: #FFD700;
-            border-radius: 50%;
-            animation: golden-float 4s ease-in-out infinite;
-            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-        }
-        
-        @keyframes node-float {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-15px) rotate(5deg); }
-        }
-        
-        @keyframes node-pulse {
-            0%, 100% { transform: scale(1); opacity: 0.5; }
-            50% { transform: scale(1.2); opacity: 0.8; }
-        }
-        
-        @keyframes glow-pulse {
-            0%, 100% { opacity: 0.3; transform: scale(1); }
-            50% { opacity: 0.6; transform: scale(1.2); }
-        }
-        
-        @keyframes glow-flow {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
-        
-        @keyframes trail-fade {
-            0% { opacity: 1; transform: scale(1); }
-            100% { opacity: 0; transform: scale(2); }
-        }
-        
-        @keyframes golden-float {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-10px) rotate(180deg); }
         }
         
         /* Responsive Adjustments */
@@ -1738,17 +1687,10 @@
             <div class="connection-line" style="width: 100px; top: 20%; left: 70%; transform: rotate(-45deg);"></div>
             <div class="connection-line" style="width: 80px; top: 50%; left: 90%; transform: rotate(30deg);"></div>
         </div>
-        <div class="container mx-auto relative z-10">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="flex items-center space-x-3 mb-4 md:mb-0">
-                    <img src="assets/logo.svg" alt="Hagoi Logo" class="w-8 h-8">
-                    <span class="text-xl font-bold gradient-text">Hagoi</span>
-                </div>
-                <div class="flex space-x-6">
-                    <a href="https://github.com/hagoiteknologimaju" class="text-gray-400 hover:text-[#00F5A0] transition">GitHub</a>
-                    <a href="#" class="text-gray-400 hover:text-[#00F5A0] transition">Our Mission</a>
-                    <a href="#" class="text-gray-400 hover:text-[#00F5A0] transition">Contact</a>
-                </div>
+        <div class="container mx-auto relative z-10 flex flex-col items-center">
+            <div class="flex items-center space-x-3 mb-6">
+                <img src="assets/logo.svg" alt="Hagoi Logo" class="w-8 h-8">
+                <span class="text-xl font-bold gradient-text">Hagoi</span>
             </div>
             <div class="mt-8 text-center text-gray-400">
                 <p>© <span id="current-year"></span> Hagoi Wallet. Powered by Hagoi Teknologi Maju & Hagoi Cloud</p>
@@ -1901,4 +1843,3 @@
     </script>
 </body>
 </html>
-
