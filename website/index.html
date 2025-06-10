@@ -1,0 +1,1904 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Hagoi Wallet - Solana wallet dengan keamanan tingkat militer dan transaksi instan. Kelola aset Solana Anda dengan aman dan mudah.">
+    <meta name="keywords" content="Hagoi Wallet, Solana wallet, cryptocurrency wallet, blockchain wallet, crypto security, Solana crypto, digital wallet">
+    <meta name="author" content="Hagoi Teknologi Maju">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Hagoi Wallet - Solana Wallet dengan Keamanan Tingkat Militer">
+    <meta property="og:description" content="Kelola aset Solana Anda dengan aman menggunakan Hagoi Wallet. Dilengkapi dengan enkripsi tingkat militer dan transaksi instan.">
+    <meta property="og:image" content="assets/logo.svg">
+    <meta property="og:url" content="https://hagoiwallet.com">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags --> 
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Hagoi Wallet - Solana Wallet dengan Keamanan Tingkat Militer">
+    <meta name="twitter:description" content="Kelola aset Solana Anda dengan aman menggunakan Hagoi Wallet. Dilengkapi dengan enkripsi tingkat militer dan transaksi instan.">
+    <meta name="twitter:image" content="assets/logo.svg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://hagoiwallet.com">
+    
+    <title>Hagoi Wallet - Solana Wallet</title>
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/logo.svg">
+    <link rel="icon" type="image/svg+xml" sizes="32x32" href="assets/logo.svg">
+    <link rel="icon" type="image/svg+xml" sizes="16x16" href="assets/logo.svg">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#00F5A0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: #0A0A0A;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #00F5A0 0%, #00D9F5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }   
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .neon-border {
+            border: 1px solid rgba(0, 245, 160, 0.2);
+            box-shadow: 0 0 20px rgba(0, 245, 160, 0.1);
+        }
+        .hover-glow:hover {
+            box-shadow: 0 0 30px rgba(0, 245, 160, 0.2);
+        }
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        .pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .5; }
+        }
+        .grid-bg {
+            background-image: 
+                linear-gradient(rgba(0, 245, 160, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 245, 160, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            position: relative;
+        }
+        .grid-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(0, 245, 160, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .company-badge {
+            background: linear-gradient(45deg, #00F5A0, #00D9F5);
+            animation: gradient 3s ease infinite;
+        }
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .typing-text {
+            display: inline-block;
+            position: relative;
+        }
+        .typing-text::after {
+            content: '|';
+            position: absolute;
+            right: -4px;
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        .typing-animation {
+            overflow: hidden;
+            white-space: nowrap;
+            width: 0;
+            animation: typing 3.5s steps(40, end) forwards;
+        }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        .hex-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 17.32V51.96L30 69.28L0 51.96V17.32L30 0z' fill='none' stroke='rgba(0, 245, 160, 0.1)' stroke-width='1'/%3E%3C/svg%3E");
+            background-size: 60px 60px;
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        .cyber-card {
+            position: relative;
+            overflow: hidden;
+        }
+        .cyber-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent,
+                rgba(0, 245, 160, 0.1),
+                transparent
+            );
+            transform: rotate(45deg);
+            animation: cyber-shine 3s linear infinite;
+        }
+        @keyframes cyber-shine {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) rotate(45deg); }
+        }
+        .nav-link {
+            position: relative;
+            overflow: hidden;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, #00F5A0, #00D9F5);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
+        }
+        .nav-link:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+        .hero-glow {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(0, 245, 160, 0.2) 0%, transparent 70%);
+            filter: blur(100px);
+            pointer-events: none;
+        }
+        .solana-animation {
+            position: absolute;
+            right: 10%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 400px;
+            height: 400px;
+            opacity: 0.8;
+        }
+        .left-web3-animation {
+            position: absolute;
+            left: 10%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 400px;
+            height: 400px;
+            opacity: 0.8;
+        }
+        .hexagon {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: transparent;
+            border: 2px solid #00F5A0;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            animation: hex-float 4s ease-in-out infinite;
+        }
+        @keyframes hex-float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+        .data-stream {
+            position: absolute;
+            width: 2px;
+            height: 100px;
+            background: linear-gradient(to bottom, transparent, #00F5A0, transparent);
+            animation: stream-flow 2s linear infinite;
+        }
+        @keyframes stream-flow {
+            0% { transform: translateY(-100%); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateY(100%); opacity: 0; }
+        }
+        .cyber-circle {
+            position: absolute;
+            border: 2px solid #00F5A0;
+            border-radius: 50%;
+            animation: circle-pulse 3s ease-in-out infinite;
+        }
+        @keyframes circle-pulse {
+            0%, 100% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+        }
+        .web3-node {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: #00F5A0;
+            border-radius: 50%;
+            box-shadow: 0 0 20px #00F5A0;
+            animation: node-pulse 2s ease-in-out infinite;
+        }
+        @keyframes node-pulse {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.5); opacity: 1; }
+        }
+        .web3-connection {
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(90deg, #00F5A0, #00D9F5);
+            transform-origin: left center;
+            animation: connection-pulse 3s ease-in-out infinite;
+        }
+        @keyframes connection-pulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+        .web3-block {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border: 2px solid #00F5A0;
+            transform: rotate(45deg);
+            animation: block-rotate 4s linear infinite;
+        }
+        @keyframes block-rotate {
+            0% { transform: rotate(45deg); }
+            100% { transform: rotate(405deg); }
+        }
+        .web3-data {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #00F5A0;
+            border-radius: 50%;
+            animation: data-flow 2s linear infinite;
+        }
+        @keyframes data-flow {
+            0% { transform: translate(0, 0); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translate(var(--tx), var(--ty)); opacity: 0; }
+        }
+        /* Mobile Responsive Button Styles */
+        @media (max-width: 768px) {
+            .mobile-button {
+                width: 100%;
+                padding: 1rem;
+                font-size: 1rem;
+                margin: 0.5rem 0;
+                min-height: 48px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+            .button-container {
+                flex-direction: column;
+                width: 100%;
+                padding: 0 1rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .button-container a {
+                width: 100%;
+                max-width: 300px;
+                margin: 0.5rem auto;
+            }
+            /* Tambahan untuk responsivitas teks */
+            .text-xl {
+                font-size: 1rem;
+                padding: 0 1rem;
+            }
+            .max-w-4xl {
+                max-width: 100%;
+            }
+            .typing-animation {
+                white-space: normal;
+                overflow: visible;
+                width: 100% !important;
+                animation: none !important;
+            }
+            h1 {
+                font-size: 2.5rem !important;
+                padding: 0 1rem;
+            }
+            /* Sederhanakan animasi untuk mobile */
+            .solana-animation, .left-web3-animation {
+                display: none;
+            }
+            .mobile-web3-animation {
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 200px;
+                height: 200px;
+                opacity: 0.5;
+            }
+            .mobile-web3-animation .cyber-circle {
+                position: absolute;
+                border: 2px solid #00F5A0;
+                border-radius: 50%;
+                animation: circle-pulse 3s ease-in-out infinite;
+            }
+            .mobile-web3-animation .cyber-circle:nth-child(1) {
+                width: 100px;
+                height: 100px;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            .mobile-web3-animation .cyber-circle:nth-child(2) {
+                width: 150px;
+                height: 150px;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                animation-delay: 0.5s;
+            }
+            .mobile-web3-animation .cyber-circle:nth-child(3) {
+                width: 200px;
+                height: 200px;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                animation-delay: 1s;
+            }
+        }
+        /* Desktop Button Styles */
+        @media (min-width: 769px) {
+            .button-container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 1rem;
+            }
+            .mobile-button {
+                min-width: 200px;
+                text-align: center;
+            }
+        }
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #00F5A0, #00D9F5);
+            transform-origin: 0 50%;
+            transform: scaleX(0);
+            z-index: 1000;
+        }
+        .scroll-glow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 999;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .scroll-glow.active {
+            opacity: 1;
+        }
+        .section-transition {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .section-transition.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .cyber-line {
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #00F5A0, transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .cyber-line.active {
+            opacity: 1;
+        }
+        .custom-cursor {
+            width: 20px;
+            height: 20px;
+            background: rgba(0, 245, 160, 0.5);
+            border: 2px solid #00F5A0;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.2s ease;
+            mix-blend-mode: difference;
+        }
+        .custom-cursor-dot {
+            width: 4px;
+            height: 4px;
+            background: #00F5A0;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s ease;
+        }
+        .cursor-glow {
+            width: 40px;
+            height: 40px;
+            background: radial-gradient(circle, rgba(0, 245, 160, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9998;
+            transition: transform 0.3s ease;
+            mix-blend-mode: screen;
+        }
+        .cursor-text {
+            position: fixed;
+            color: #00F5A0;
+            font-size: 12px;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            text-shadow: 0 0 10px rgba(0, 245, 160, 0.5);
+        }
+        .cursor-text.visible {
+            opacity: 1;
+        }
+        .cursor-hover {
+            transform: scale(1.5);
+            background: rgba(0, 245, 160, 0.3);
+            border-color: #00D9F5;
+        }
+        .cursor-click {
+            transform: scale(0.8);
+            background: rgba(0, 245, 160, 0.8);
+        }
+        .web3-animation {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+        .blockchain {
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00F5A0, transparent);
+            animation: blockchain-flow 3s linear infinite;
+        }
+        @keyframes blockchain-flow {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        .block {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #00F5A0;
+            border-radius: 4px;
+            animation: block-float 4s ease-in-out infinite;
+        }
+        @keyframes block-float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+        .connection-line {
+            position: absolute;
+            height: 2px;
+            background: #00F5A0;
+            transform-origin: left center;
+            animation: connect-pulse 2s ease-in-out infinite;
+        }
+        @keyframes connect-pulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+        /* Web3 Animation Styles */
+        .web3-animation-container {
+            opacity: 0.6;
+        }
+        
+        .floating-block {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: rgba(0, 245, 160, 0.1);
+            border: 2px solid #00F5A0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        .block-content {
+            color: #00F5A0;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        .connection-line {
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(90deg, #00F5A0, #00D9F5);
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        .data-particle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #00F5A0;
+            border-radius: 50%;
+            animation: particle-flow 3s linear infinite;
+        }
+        
+        .cyber-circle {
+            position: absolute;
+            border: 2px solid #00F5A0;
+            border-radius: 50%;
+            animation: circle-pulse 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+        
+        @keyframes particle-flow {
+            0% { transform: translate(0, 0); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translate(var(--tx), var(--ty)); opacity: 0; }
+        }
+        
+        @keyframes circle-pulse {
+            0%, 100% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+        }
+        /* Blockchain Animation Styles */
+        .blockchain-animation {
+            opacity: 0.9;
+        }
+        
+        .blockchain-node {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: rgba(0, 245, 160, 0.1);
+            border: 2px solid #00F5A0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: node-float 4s ease-in-out infinite;
+            box-shadow: 0 0 20px rgba(0, 245, 160, 0.2);
+            backdrop-filter: blur(5px);
+        }
+        
+        .node-pulse {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: rgba(0, 245, 160, 0.2);
+            animation: node-pulse 2s ease-in-out infinite;
+        }
+        
+        .node-glow {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0, 245, 160, 0.3) 0%, transparent 70%);
+            animation: glow-pulse 3s ease-in-out infinite;
+        }
+        
+        .node-content {
+            color: #00F5A0;
+            font-weight: bold;
+            font-size: 16px;
+            z-index: 1;
+            text-shadow: 0 0 10px rgba(0, 245, 160, 0.5);
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        
+        .blockchain-connection {
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(90deg, #00F5A0, #00D9F5);
+            transform-origin: left center;
+            animation: connection-pulse 3s ease-in-out infinite;
+            box-shadow: 0 0 10px rgba(0, 245, 160, 0.3);
+            opacity: 0;
+        }
+        
+        @keyframes connection-pulse {
+            0% { 
+                opacity: 0;
+                transform: scaleX(0);
+            }
+            50% { 
+                opacity: 1;
+                transform: scaleX(1);
+            }
+            100% { 
+                opacity: 0;
+                transform: scaleX(0);
+            }
+        }
+        
+        .connection-glow {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(0, 245, 160, 0.3), rgba(0, 217, 245, 0.3));
+            animation: glow-flow 2s linear infinite;
+        }
+        
+        .data-flow {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #00F5A0;
+            border-radius: 50%;
+            animation: data-flow 3s linear infinite;
+            box-shadow: 0 0 15px rgba(0, 245, 160, 0.5);
+            opacity: 0;
+        }
+        
+        @keyframes data-flow {
+            0% { 
+                transform: translate(0, 0);
+                opacity: 0;
+            }
+            50% { 
+                opacity: 1;
+            }
+            100% { 
+                transform: translate(var(--tx), var(--ty));
+                opacity: 0;
+            }
+        }
+        
+        .data-trail {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(0, 245, 160, 0.5) 0%, transparent 70%);
+            animation: trail-fade 1s linear infinite;
+        }
+        
+        .golden-particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #FFD700;
+            border-radius: 50%;
+            animation: golden-float 4s ease-in-out infinite;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+        
+        @keyframes node-float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(5deg); }
+        }
+        
+        @keyframes node-pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+        }
+        
+        @keyframes glow-pulse {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.2); }
+        }
+        
+        @keyframes glow-flow {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        @keyframes trail-fade {
+            0% { opacity: 1; transform: scale(1); }
+            100% { opacity: 0; transform: scale(2); }
+        }
+        
+        @keyframes golden-float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(180deg); }
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .blockchain-node {
+                width: 50px;
+                height: 50px;
+                font-size: 12px;
+            }
+            
+            .blockchain-connection {
+                height: 2px;
+            }
+            
+            .data-flow {
+                width: 8px;
+                height: 8px;
+            }
+            
+            .golden-particle {
+                width: 3px;
+                height: 3px;
+            }
+        }
+
+        /* Modern Animation Styles */
+        .floating-element {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 245, 160, 0.1);
+            border: 1px solid rgba(0, 245, 160, 0.2);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: float-smooth 4s ease-in-out infinite;
+        }
+        
+        .element-content {
+            color: #00F5A0;
+            width: 24px;
+            height: 24px;
+        }
+        
+        .dynamic-line {
+            position: absolute;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #00F5A0, transparent);
+            animation: line-flow 3s linear infinite;
+        }
+        
+        .energy-particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #00F5A0;
+            border-radius: 50%;
+            animation: particle-flow 3s linear infinite;
+            box-shadow: 0 0 10px #00F5A0;
+        }
+        
+        .glow-orb {
+            position: absolute;
+            border: 1px solid rgba(0, 245, 160, 0.2);
+            border-radius: 50%;
+            animation: orb-pulse 3s ease-in-out infinite;
+            background: radial-gradient(circle, rgba(0, 245, 160, 0.1) 0%, transparent 70%);
+        }
+        
+        @keyframes float-smooth {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(5deg); }
+        }
+        
+        @keyframes line-flow {
+            0% { transform: translateX(-100%) scaleX(0); opacity: 0; }
+            50% { transform: translateX(0) scaleX(1); opacity: 1; }
+            100% { transform: translateX(100%) scaleX(0); opacity: 0; }
+        }
+        
+        @keyframes particle-flow {
+            0% { transform: translate(0, 0); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translate(var(--tx), var(--ty)); opacity: 0; }
+        }
+        
+        @keyframes orb-pulse {
+            0%, 100% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.2); opacity: 0.6; }
+        }
+        
+        .animate-spin-slow {
+            animation: spin 8s linear infinite;
+        }
+        
+        .animate-float-smooth {
+            animation: float-smooth 4s ease-in-out infinite;
+        }
+        
+        .animate-pulse-smooth {
+            animation: pulse-smooth 3s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        @keyframes pulse-smooth {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.1); opacity: 1; }
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .web3-animation-container {
+                opacity: 0.2;
+            }
+            
+            .floating-element {
+                width: 30px;
+                height: 30px;
+            }
+            
+            .element-content {
+                width: 18px;
+                height: 18px;
+            }
+            
+            .dynamic-line {
+                height: 1px;
+            }
+            
+            .energy-particle {
+                width: 3px;
+                height: 3px;
+            }
+            
+            .glow-orb {
+                width: 60px;
+                height: 60px;
+            }
+        }
+
+        /* Security Animation Styles */
+        .security-animation {
+            opacity: 0.8;
+        }
+        
+        .security-node {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: rgba(0, 245, 160, 0.1);
+            border: 2px solid #00F5A0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: node-float 4s ease-in-out infinite;
+            box-shadow: 0 0 20px rgba(0, 245, 160, 0.2);
+            backdrop-filter: blur(5px);
+        }
+        
+        .node-pulse {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: rgba(0, 245, 160, 0.2);
+            animation: node-pulse 2s ease-in-out infinite;
+        }
+        
+        .node-glow {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0, 245, 160, 0.3) 0%, transparent 70%);
+            animation: glow-pulse 3s ease-in-out infinite;
+        }
+        
+        .node-content {
+            color: #00F5A0;
+            z-index: 1;
+            filter: drop-shadow(0 0 10px rgba(0, 245, 160, 0.5));
+        }
+        
+        .security-connection {
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(90deg, #00F5A0, #00D9F5);
+            animation: connection-pulse 3s ease-in-out infinite;
+            box-shadow: 0 0 10px rgba(0, 245, 160, 0.3);
+        }
+        
+        .connection-glow {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(0, 245, 160, 0.3), rgba(0, 217, 245, 0.3));
+            animation: glow-flow 2s linear infinite;
+        }
+        
+        .security-data {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #00F5A0;
+            border-radius: 50%;
+            animation: data-flow 3s linear infinite;
+            box-shadow: 0 0 15px rgba(0, 245, 160, 0.5);
+        }
+        
+        .data-trail {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(0, 245, 160, 0.5) 0%, transparent 70%);
+            animation: trail-fade 1s linear infinite;
+        }
+        
+        @keyframes node-float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(5deg); }
+        }
+        
+        @keyframes node-pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+        }
+        
+        @keyframes glow-pulse {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.2); }
+        }
+        
+        @keyframes connection-pulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+        
+        @keyframes glow-flow {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        @keyframes data-flow {
+            0% { transform: translate(0, 0); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translate(var(--tx), var(--ty)); opacity: 0; }
+        }
+        
+        @keyframes trail-fade {
+            0% { opacity: 1; transform: scale(1); }
+            100% { opacity: 0; transform: scale(2); }
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .security-node {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .node-content svg {
+                width: 20px;
+                height: 20px;
+            }
+            
+            .security-connection {
+                height: 1px;
+            }
+            
+            .security-data {
+                width: 6px;
+                height: 6px;
+            }
+            
+            .security-animation {
+                opacity: 0.4;
+            }
+        }
+        
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .security-node {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .node-content svg {
+                width: 24px;
+                height: 24px;
+            }
+            
+            .security-animation {
+                opacity: 0.6;
+            }
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .security-node {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .node-content svg {
+                width: 20px;
+                height: 20px;
+            }
+            
+            .security-connection {
+                height: 1px;
+            }
+            
+            .security-data {
+                width: 6px;
+                height: 6px;
+            }
+            
+            .security-animation {
+                opacity: 0.4;
+            }
+        }
+        
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .security-node {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .node-content svg {
+                width: 24px;
+                height: 24px;
+            }
+            
+            .security-animation {
+                opacity: 0.6;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .dao-node {
+                top: 95% !important;
+                left: 85% !important;
+            }
+            
+            .blockchain-connection {
+                width: 20% !important;
+            }
+            
+            .data-flow {
+                --tx: 30px !important;
+                --ty: 30px !important;
+            }
+        }
+
+        .cyber-particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: #00F5A0;
+            border-radius: 50%;
+            box-shadow: 0 0 15px #00F5A0;
+            animation: cyber-float 4s ease-in-out infinite;
+        }
+
+        @keyframes cyber-float {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+                opacity: 0.3;
+            }
+            25% {
+                transform: translate(30px, -30px) scale(1.5);
+                opacity: 1;
+            }
+            50% {
+                transform: translate(60px, 0) scale(1);
+                opacity: 0.3;
+            }
+            75% {
+                transform: translate(30px, 30px) scale(0.5);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body class="text-white">
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor-dot"></div>
+    <div class="cursor-glow"></div>
+    <div class="cursor-text">HAGOI</div>
+    <div class="scroll-indicator"></div>
+    <div class="scroll-glow"></div>
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass-card">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <a href="#home" class="flex items-center space-x-3">
+                        <img src="assets/logo.svg" alt="Hagoi Logo" class="w-8 h-8">
+                        <span class="text-xl font-bold gradient-text">Hagoi</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#features" class="nav-link hover:text-[#00F5A0] transition">Features</a>
+                    <a href="#security" class="nav-link hover:text-[#00F5A0] transition">Security</a>
+                    <a href="#software" class="nav-link hover:text-[#00F5A0] transition">Software</a>
+                    <a href="#company" class="nav-link hover:text-[#00F5A0] transition">Company</a>
+                    <a href="#download" class="nav-link hover:text-[#00F5A0] transition">Download</a>
+                </div>
+                <a href="#download" class="bg-[#00F5A0] hover:bg-[#00D9F5] text-black px-6 py-2 rounded-lg transition hover-glow">
+                    Launch App
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-6 grid-bg relative overflow-hidden" id="home">
+        <div class="hero-glow"></div>
+        <div class="hex-grid"></div>
+        <div class="glow-line"></div>
+        <div class="left-web3-animation">
+            <!-- Hexagons -->
+            <div class="hexagon" style="top: 20%; left: 20%; animation-delay: 0s;"></div>
+            <div class="hexagon" style="top: 50%; left: 50%; animation-delay: 0.5s;"></div>
+            <div class="hexagon" style="top: 80%; left: 80%; animation-delay: 1s;"></div>
+            <div class="hexagon" style="top: 30%; left: 70%; animation-delay: 1.5s;"></div>
+            <div class="hexagon" style="top: 70%; left: 30%; animation-delay: 2s;"></div>
+            
+            <!-- Data Streams -->
+            <div class="data-stream" style="left: 25%; top: 0%; animation-delay: 0s;"></div>
+            <div class="data-stream" style="left: 45%; top: 0%; animation-delay: 0.3s;"></div>
+            <div class="data-stream" style="left: 65%; top: 0%; animation-delay: 0.6s;"></div>
+            <div class="data-stream" style="left: 85%; top: 0%; animation-delay: 0.9s;"></div>
+            
+            <!-- Cyber Circles -->
+            <div class="cyber-circle" style="width: 100px; height: 100px; top: 40%; left: 40%; animation-delay: 0s;"></div>
+            <div class="cyber-circle" style="width: 150px; height: 150px; top: 35%; left: 35%; animation-delay: 0.5s;"></div>
+            <div class="cyber-circle" style="width: 200px; height: 200px; top: 30%; left: 30%; animation-delay: 1s;"></div>
+        </div>
+        <div class="solana-animation">
+            <!-- Nodes -->
+            <div class="web3-node" style="top: 20%; left: 20%; animation-delay: 0s;"></div>
+            <div class="web3-node" style="top: 50%; left: 50%; animation-delay: 0.5s;"></div>
+            <div class="web3-node" style="top: 80%; left: 80%; animation-delay: 1s;"></div>
+            <div class="web3-node" style="top: 30%; left: 70%; animation-delay: 1.5s;"></div>
+            <div class="web3-node" style="top: 70%; left: 30%; animation-delay: 2s;"></div>
+            
+            <!-- Connections -->
+            <div class="web3-connection" style="width: 150px; top: 20%; left: 20%; transform: rotate(45deg);"></div>
+            <div class="web3-connection" style="width: 200px; top: 50%; left: 50%; transform: rotate(-30deg);"></div>
+            <div class="web3-connection" style="width: 180px; top: 80%; left: 80%; transform: rotate(60deg);"></div>
+            <div class="web3-connection" style="width: 120px; top: 30%; left: 70%; transform: rotate(-45deg);"></div>
+            <div class="web3-connection" style="width: 160px; top: 70%; left: 30%; transform: rotate(30deg);"></div>
+            
+            <!-- Blocks -->
+            <div class="web3-block" style="top: 40%; left: 40%; animation-delay: 0s;"></div>
+            <div class="web3-block" style="top: 60%; left: 60%; animation-delay: 1s;"></div>
+            
+            <!-- Data Flow -->
+            <div class="web3-data" style="--tx: 100px; --ty: 100px; top: 20%; left: 20%; animation-delay: 0s;"></div>
+            <div class="web3-data" style="--tx: -100px; --ty: 100px; top: 50%; left: 50%; animation-delay: 0.5s;"></div>
+            <div class="web3-data" style="--tx: 100px; --ty: -100px; top: 80%; left: 80%; animation-delay: 1s;"></div>
+            <div class="web3-data" style="--tx: -100px; --ty: -100px; top: 30%; left: 70%; animation-delay: 1.5s;"></div>
+            <div class="web3-data" style="--tx: 100px; --ty: 100px; top: 70%; left: 30%; animation-delay: 2s;"></div>
+        </div>
+        <div class="mobile-web3-animation">
+            <div class="cyber-circle"></div>
+            <div class="cyber-circle"></div>
+            <div class="cyber-circle"></div>
+        </div>
+        <div class="container mx-auto text-center relative z-10">
+            <div class="inline-block mb-6">
+                <span class="company-badge px-4 py-2 rounded-full text-sm font-semibold text-black">
+                    Powered by Hagoi Teknologi Maju
+                </span>
+            </div>
+            <h1 class="text-6xl md:text-7xl font-bold mb-8">
+                <span class="typing-animation" style="animation-delay: 0.1s">Hagoi Wallet</span>
+                <br>
+                <span class="gradient-text typing-text" id="dynamic-text">for Solana</span>
+            </h1>
+            <p class="text-gray-400 text-xl mb-12 max-w-4xl mx-auto typing-animation leading-relaxed" style="animation-delay: 0.2s">
+                Secure Solana wallet with military-grade protection and instant transactions.
+            </p>
+            <div class="flex justify-center space-x-4 button-container">
+                <a href="#download" class="bg-[#00F5A0] hover:bg-[#00D9F5] text-black px-8 py-3 rounded-lg text-lg font-semibold transition hover-glow mobile-button">
+                    Download
+                </a>
+                <a href="#software" class="glass-card px-8 py-3 rounded-lg text-lg font-semibold transition hover-glow mobile-button">
+                    View Software
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Section -->
+    <section id="company" class="py-20 px-6 relative">
+        <div class="hex-grid"></div>
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Powered by Innovation</h2>
+                <p class="text-gray-400">Backed by Hagoi Teknologi Maju and Hagoi Cloud</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="glass-card p-6 rounded-xl neon-border floating cyber-card">
+                        <h3 class="text-2xl font-semibold mb-4 text-[#00F5A0]">Hagoi Teknologi Maju</h3>
+                        <p class="text-gray-400">Innovating in blockchain, AI, cloud, and gaming technology.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl neon-border floating cyber-card" style="animation-delay: 0.5s">
+                        <h3 class="text-2xl font-semibold mb-4 text-[#00F5A0]">Hagoi Cloud</h3>
+                        <p class="text-gray-400">Secure, high-performance cloud solutions for AI, gaming, and blockchain.</p>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-r from-[#00F5A0]/20 to-transparent rounded-xl"></div>
+                    <div class="glass-card p-8 rounded-xl relative z-10 neon-border cyber-card">
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-3 h-3 bg-[#00F5A0] rounded-full pulse"></div>
+                                <span class="text-gray-300">Enterprise Security</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-3 h-3 bg-[#00F5A0] rounded-full pulse" style="animation-delay: 0.2s"></div>
+                                <span class="text-gray-300">Cloud Infrastructure</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-3 h-3 bg-[#00F5A0] rounded-full pulse" style="animation-delay: 0.4s"></div>
+                                <span class="text-gray-300">Web3 Innovation</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-3 h-3 bg-[#00F5A0] rounded-full pulse" style="animation-delay: 0.6s"></div>
+                                <span class="text-gray-300">Global Network</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Software Showcase -->
+    <section id="software" class="py-20 px-6 grid-bg">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Software Preview</h2>
+                <p class="text-gray-400">Experience the future of Solana wallet management</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Blockchain Animation -->
+                <div class="blockchain-animation absolute left-0 top-0 w-full h-full pointer-events-none" style="z-index: 0;">
+                    <!-- Blockchain Nodes -->
+                    <div class="blockchain-node" style="top: 5%; left: 5%;">
+                        <div class="node-pulse"></div>
+                        <div class="node-content">SOL</div>
+                        <div class="node-glow"></div>
+                    </div>
+                    <div class="blockchain-node" style="top: 15%; left: 85%;">
+                        <div class="node-pulse"></div>
+                        <div class="node-content">NFT</div>
+                        <div class="node-glow"></div>
+                    </div>
+                    <div class="blockchain-node dao-node" style="top: 85%; left: 85%;">
+                        <div class="node-pulse"></div>
+                        <div class="node-content">DAO</div>
+                        <div class="node-glow"></div>
+                    </div>
+                    
+                    <!-- Blockchain Connections -->
+                    <div class="blockchain-connection" style="width: 20%; top: 15%; left: 10%; transform: rotate(45deg);">
+                        <div class="connection-glow"></div>
+                    </div>
+                    <div class="blockchain-connection" style="width: 25%; top: 35%; left: 80%; transform: rotate(-30deg);">
+                        <div class="connection-glow"></div>
+                    </div>
+                    <div class="blockchain-connection" style="width: 20%; top: 55%; left: 20%; transform: rotate(60deg);">
+                        <div class="connection-glow"></div>
+                    </div>
+                    <div class="blockchain-connection" style="width: 15%; top: 75%; left: 70%; transform: rotate(-45deg);">
+                        <div class="connection-glow"></div>
+                    </div>
+                    
+                    <!-- Data Flow -->
+                    <div class="data-flow" style="--tx: 30px; --ty: 30px; top: 10%; left: 10%;">
+                        <div class="data-trail"></div>
+                    </div>
+                    <div class="data-flow" style="--tx: -50px; --ty: 50px; top: 30%; left: 80%;">
+                        <div class="data-trail"></div>
+                    </div>
+                    <div class="data-flow" style="--tx: 50px; --ty: -50px; top: 50%; left: 15%;">
+                        <div class="data-trail"></div>
+                    </div>
+                    <div class="data-flow" style="--tx: -50px; --ty: -50px; top: 70%; left: 75%;">
+                        <div class="data-trail"></div>
+                    </div>
+                </div>
+
+                <div class="relative w-5/6 mx-auto" style="z-index: 1;">
+                    <div class="absolute inset-0 bg-gradient-to-r from-[#00F5A0]/20 to-transparent rounded-xl"></div>
+                    <div class="glass-card p-8 rounded-xl relative z-10 neon-border floating">
+                        <img src="assets/software.png" alt="Software Preview" class="w-full h-auto rounded-lg ">
+                    </div>
+                </div>
+                <div class="space-y-8" style="z-index: 2;">
+                    <div class="glass-card p-6 rounded-xl neon-border floating" style="animation-delay: 0.2s">
+                        <h3 class="text-2xl font-semibold mb-4 text-[#00F5A0]">Secure Storage</h3>
+                        <p class="text-gray-400">Military-grade encryption with .hagoi file format protection for your Solana keys.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl neon-border floating" style="animation-delay: 0.4s">
+                        <h3 class="text-2xl font-semibold mb-4 text-[#00F5A0]">Real-time Balance</h3>
+                        <p class="text-gray-400">Track your SOL balance with automatic updates and USD conversion.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl neon-border floating" style="animation-delay: 0.6s">
+                        <h3 class="text-2xl font-semibold mb-4 text-[#00F5A0]">Transaction History</h3>
+                        <p class="text-gray-400">View and track all your Solana transactions with detailed history.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 px-6">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-16">Core Features</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-card p-8 rounded-xl neon-border floating">
+                    <div class="w-12 h-12 bg-[#00F5A0]/10 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-[#00F5A0]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Military Security</h3>
+                    <p class="text-gray-400">Advanced encryption with .hagoi file format protection for your Solana keys.</p>
+                </div>
+                <div class="glass-card p-8 rounded-xl neon-border floating" style="animation-delay: 0.2s">
+                    <div class="w-12 h-12 bg-[#00F5A0]/10 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-[#00F5A0]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Lightning Fast</h3>
+                    <p class="text-gray-400">Optimized for Solana's high-speed blockchain with instant transaction processing.</p>
+                </div>
+                <div class="glass-card p-8 rounded-xl neon-border floating" style="animation-delay: 0.4s">
+                    <div class="w-12 h-12 bg-[#00F5A0]/10 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-[#00F5A0]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">User Experience</h3>
+                    <p class="text-gray-400">Intuitive interface for managing your Solana assets with real-time price tracking.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security Section -->
+    <section id="security" class="py-20 px-6 grid-bg relative overflow-hidden">
+        <div class="hero-glow"></div>
+        <div class="hex-grid"></div>
+        
+        <!-- Security Animation Container -->
+        <div class="security-animation absolute inset-0 pointer-events-none">
+            <!-- Modern Data Streams -->
+            <div class="data-stream" style="left: 25%; top: 0%; animation-delay: 0s;">
+                <div class="stream-glow"></div>
+            </div>
+            <div class="data-stream" style="left: 45%; top: 0%; animation-delay: 0.3s;">
+                <div class="stream-glow"></div>
+            </div>
+            <div class="data-stream" style="left: 65%; top: 0%; animation-delay: 0.6s;">
+                <div class="stream-glow"></div>
+            </div>
+            <div class="data-stream" style="left: 85%; top: 0%; animation-delay: 0.9s;">
+                <div class="stream-glow"></div>
+            </div>
+            <div class="data-stream" style="left: 15%; top: 0%; animation-delay: 1.2s;">
+                <div class="stream-glow"></div>
+            </div>
+            <div class="data-stream" style="left: 35%; top: 0%; animation-delay: 1.5s;">
+                <div class="stream-glow"></div>
+            </div>
+            <div class="data-stream" style="left: 55%; top: 0%; animation-delay: 1.8s;">
+                <div class="stream-glow"></div>
+            </div>
+            <div class="data-stream" style="left: 75%; top: 0%; animation-delay: 2.1s;">
+                <div class="stream-glow"></div>
+            </div>
+            
+            <!-- Enhanced Floating Elements -->
+            <div class="floating-element" style="top: 20%; left: 30%; animation-delay: 0s;">
+                <div class="element-glow"></div>
+                <div class="element-content">
+                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="floating-element" style="top: 30%; right: 30%; animation-delay: 0.5s;">
+                <div class="element-glow"></div>
+                <div class="element-content">
+                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="floating-element" style="bottom: 30%; left: 30%; animation-delay: 1s;">
+                <div class="element-glow"></div>
+                <div class="element-content">
+                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+            
+            <!-- Enhanced Particle Effects -->
+            <div class="particle" style="top: 15%; left: 25%; animation-delay: 0s;"></div>
+            <div class="particle" style="top: 45%; left: 55%; animation-delay: 0.2s;"></div>
+            <div class="particle" style="top: 75%; left: 85%; animation-delay: 0.4s;"></div>
+            <div class="particle" style="top: 35%; left: 75%; animation-delay: 0.6s;"></div>
+            <div class="particle" style="top: 65%; left: 35%; animation-delay: 0.8s;"></div>
+            <div class="particle" style="top: 25%; left: 45%; animation-delay: 1s;"></div>
+            <div class="particle" style="top: 55%; left: 65%; animation-delay: 1.2s;"></div>
+            <div class="particle" style="top: 85%; left: 15%; animation-delay: 1.4s;"></div>
+            <div class="particle" style="top: 10%; left: 60%; animation-delay: 1.6s;"></div>
+            <div class="particle" style="top: 40%; left: 20%; animation-delay: 1.8s;"></div>
+            <div class="particle" style="top: 70%; left: 40%; animation-delay: 2s;"></div>
+            <div class="particle" style="top: 20%; left: 80%; animation-delay: 2.2s;"></div>
+
+            <!-- Modern Grid Lines -->
+            <div class="grid-line" style="top: 20%; left: 0; width: 100%; transform: rotate(0deg);"></div>
+            <div class="grid-line" style="top: 40%; left: 0; width: 100%; transform: rotate(0deg);"></div>
+            <div class="grid-line" style="top: 60%; left: 0; width: 100%; transform: rotate(0deg);"></div>
+            <div class="grid-line" style="top: 80%; left: 0; width: 100%; transform: rotate(0deg);"></div>
+            <div class="grid-line" style="top: 0; left: 20%; height: 100%; transform: rotate(90deg);"></div>
+            <div class="grid-line" style="top: 0; left: 40%; height: 100%; transform: rotate(90deg);"></div>
+            <div class="grid-line" style="top: 0; left: 60%; height: 100%; transform: rotate(90deg);"></div>
+            <div class="grid-line" style="top: 0; left: 80%; height: 100%; transform: rotate(90deg);"></div>
+        </div>
+
+    <style>
+            .data-stream {
+                position: absolute;
+                width: 2px;
+                height: 100px;
+                background: linear-gradient(to bottom, transparent, #00F5A0, transparent);
+                animation: stream-flow 2s linear infinite;
+                filter: drop-shadow(0 0 8px rgba(0, 245, 160, 0.5));
+            }
+
+            .stream-glow {
+            position: absolute;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(to bottom, rgba(0, 245, 160, 0.3), transparent);
+                animation: glow-flow 2s linear infinite;
+            }
+
+            .floating-element {
+                position: absolute;
+                width: 40px;
+                height: 40px;
+            background: rgba(0, 245, 160, 0.1);
+                border: 1px solid rgba(0, 245, 160, 0.2);
+                border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+                animation: float-smooth 4s ease-in-out infinite;
+                filter: drop-shadow(0 0 10px rgba(0, 245, 160, 0.3));
+        }
+        
+            .element-glow {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+                background: radial-gradient(circle, rgba(0, 245, 160, 0.2) 0%, transparent 70%);
+                animation: glow-pulse 2s ease-in-out infinite;
+            }
+
+            .element-content {
+            color: #00F5A0;
+                width: 24px;
+                height: 24px;
+                filter: drop-shadow(0 0 5px rgba(0, 245, 160, 0.5));
+        }
+        
+            .particle {
+            position: absolute;
+                width: 4px;
+                height: 4px;
+            background: #00F5A0;
+            border-radius: 50%;
+                animation: particle-float 3s ease-in-out infinite;
+                filter: drop-shadow(0 0 5px rgba(0, 245, 160, 0.8));
+        }
+        
+            .grid-line {
+            position: absolute;
+                background: linear-gradient(90deg, transparent, rgba(0, 245, 160, 0.1), transparent);
+                animation: grid-pulse 4s ease-in-out infinite;
+            }
+
+            @keyframes stream-flow {
+                0% { transform: translateY(-100%) scaleY(1); opacity: 0; }
+                50% { transform: translateY(0) scaleY(1.2); opacity: 1; }
+                100% { transform: translateY(100%) scaleY(1); opacity: 0; }
+            }
+
+            @keyframes float-smooth {
+                0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
+                50% { transform: translateY(-15px) rotate(5deg) scale(1.1); }
+        }
+        
+        @keyframes glow-pulse {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+                50% { opacity: 0.8; transform: scale(1.2); }
+        }
+        
+        @keyframes glow-flow {
+                0% { opacity: 0; transform: translateY(-100%); }
+                50% { opacity: 1; transform: translateY(0); }
+                100% { opacity: 0; transform: translateY(100%); }
+            }
+
+            @keyframes particle-float {
+                0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+                25% { transform: translate(20px, -20px) scale(1.5); opacity: 1; }
+                50% { transform: translate(40px, 0) scale(1); opacity: 0.3; }
+                75% { transform: translate(20px, 20px) scale(0.5); opacity: 1; }
+            }
+
+            @keyframes grid-pulse {
+                0%, 100% { opacity: 0.1; }
+                50% { opacity: 0.3; }
+            }
+        </style>
+
+        <div class="container mx-auto relative z-10">
+            <h2 class="text-4xl font-bold text-center mb-16">Security First</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6">Your Keys, Your Control</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-[#00F5A0] mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span>Private keys never leave your device</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-[#00F5A0] mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span>Military-grade .hagoi file encryption</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-[#00F5A0] mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span>Open-source for transparency</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-[#00F5A0] mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span>Regular security updates</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="relative w-5/6 mx-auto">
+                    <div class="absolute inset-0 bg-gradient-to-r from-[#00F5A0]/20 to-transparent rounded-xl"></div>
+                    <div class="glass-card p-8 rounded-xl relative z-10 neon-border floating">
+                        <img src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8c2VjdXJpdHl8ZW58MHx8MHx8fDA%3D" alt="Security Illustration" class="w-full h-auto rounded-lg filter hue-rotate-[120deg] brightness-110 contrast-125 saturate-150" style="mix-blend-mode: screen;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="py-20 px-6">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-8">Ready to Launch?</h2>
+            <p class="text-gray-400 text-xl mb-12 max-w-2xl mx-auto">
+                Download Hagoi Wallet and start your Solana journey with military-grade security.
+            </p>
+            <div class="flex justify-center space-x-4 button-container">    
+                <a href="#" class="bg-[#00F5A0] hover:bg-[#00D9F5] text-black px-8 py-3 rounded-lg text-lg font-semibold transition hover-glow mobile-button flex items-center justify-center space-x-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                    </svg>
+                    <span>Download for Windows</span>
+                </a>
+                <a href="https://github.com/hagoiteknologimaju" class="glass-card px-8 py-3 rounded-lg text-lg font-semibold transition hover-glow mobile-button flex items-center justify-center space-x-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                    </svg>
+                    <span>View on GitHub</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advertisement Banner Section -->
+    <!-- <section id="advertisement" class="py-20 px-6 grid-bg relative overflow-hidden">
+        <div class="hero-glow"></div>
+        <div class="hex-grid"></div>
+        <div class="glow-line"></div>
+        <div class="container mx-auto">
+            <div class="glass-card p-8 rounded-xl neon-border relative overflow-hidden">
+
+                <div class="web3-animation-container absolute inset-0 pointer-events-none">
+       
+                    <div class="floating-block" style="top: 20%; left: 10%; animation-delay: 0s;">
+                        <div class="block-content">SOL</div>
+                    </div>
+                    <div class="floating-block" style="top: 60%; left: 80%; animation-delay: 0.5s;">
+                        <div class="block-content">NFT</div>
+                    </div>
+                    <div class="floating-block" style="top: 30%; left: 70%; animation-delay: 1s;">
+                        <div class="block-content">DEFI</div>
+                    </div>
+                    
+
+                    <div class="connection-line" style="width: 150px; top: 25%; left: 15%; transform: rotate(45deg);"></div>
+                    <div class="connection-line" style="width: 200px; top: 65%; left: 75%; transform: rotate(-30deg);"></div>
+                    <div class="connection-line" style="width: 180px; top: 35%; left: 65%; transform: rotate(60deg);"></div>
+                    
+        
+                    <div class="data-particle" style="--tx: 100px; --ty: 100px; top: 20%; left: 20%;"></div>
+                    <div class="data-particle" style="--tx: -100px; --ty: 100px; top: 50%; left: 50%;"></div>
+                    <div class="data-particle" style="--tx: 100px; --ty: -100px; top: 80%; left: 80%;"></div>
+                    
+             
+                    <div class="cyber-circle" style="width: 100px; height: 100px; top: 40%; left: 40%;"></div>
+                    <div class="cyber-circle" style="width: 150px; height: 150px; top: 35%; left: 35%; animation-delay: 0.5s;"></div>
+                </div>
+
+                <div class="absolute inset-0 bg-gradient-to-r from-[#00F5A0]/10 to-[#00D9F5]/10"></div>
+                <div class="relative z-10 flex flex-col md:flex-row items-center justify-between">
+                    <div class="text-center md:text-left mb-6 md:mb-0">
+                        <span class="bg-[#00F5A0] text-black px-4 py-1 rounded-full text-sm font-semibold mb-4 inline-block">Limited Time Offer</span>
+                        <h3 class="text-3xl font-bold mb-2">Upgrade to Premium</h3>
+                        <p class="text-gray-400">Get exclusive features and priority support with our premium package</p>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="text-right">
+                            <span class="text-gray-400 line-through text-xl">$99.99</span>
+                            <div class="text-4xl font-bold text-[#00F5A0]">$49.99</div>
+                            <span class="text-sm text-gray-400">50% OFF</span>
+                        </div>
+                        <button class="bg-[#00F5A0] hover:bg-[#00D9F5] text-black px-8 py-3 rounded-lg text-lg font-semibold transition hover-glow">
+                            Upgrade Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 glass-card relative">
+        <div class="web3-animation">
+            <div class="blockchain" style="top: 20%"></div>
+            <div class="blockchain" style="top: 50%"></div>
+            <div class="blockchain" style="top: 80%"></div>
+            
+            <div class="block" style="left: 10%; top: 20%; animation-delay: 0s;"></div>
+            <div class="block" style="left: 30%; top: 50%; animation-delay: 0.5s;"></div>
+            <div class="block" style="left: 50%; top: 80%; animation-delay: 1s;"></div>
+            <div class="block" style="left: 70%; top: 20%; animation-delay: 1.5s;"></div>
+            <div class="block" style="left: 90%; top: 50%; animation-delay: 2s;"></div>
+            
+            <div class="connection-line" style="width: 100px; top: 20%; left: 10%; transform: rotate(45deg);"></div>
+            <div class="connection-line" style="width: 150px; top: 50%; left: 30%; transform: rotate(-30deg);"></div>
+            <div class="connection-line" style="width: 120px; top: 80%; left: 50%; transform: rotate(60deg);"></div>
+            <div class="connection-line" style="width: 100px; top: 20%; left: 70%; transform: rotate(-45deg);"></div>
+            <div class="connection-line" style="width: 80px; top: 50%; left: 90%; transform: rotate(30deg);"></div>
+        </div>
+        <div class="container mx-auto relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-3 mb-4 md:mb-0">
+                    <img src="assets/logo.svg" alt="Hagoi Logo" class="w-8 h-8">
+                    <span class="text-xl font-bold gradient-text">Hagoi</span>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="https://github.com/hagoiteknologimaju" class="text-gray-400 hover:text-[#00F5A0] transition">GitHub</a>
+                    <a href="#" class="text-gray-400 hover:text-[#00F5A0] transition">Our Mission</a>
+                    <a href="#" class="text-gray-400 hover:text-[#00F5A0] transition">Contact</a>
+                </div>
+            </div>
+            <div class="mt-8 text-center text-gray-400">
+                <p>© <span id="current-year"></span> Hagoi Wallet. Powered by Hagoi Teknologi Maju & Hagoi Cloud</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Dynamic text animation
+        const words = ['Reimagined', 'Innovative', 'Secure', 'Future', 'Powerful'];
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typingDelay = 100;
+
+        function typeEffect() {
+            const currentWord = words[wordIndex];
+            const dynamicText = document.getElementById('dynamic-text');
+            
+            if (isDeleting) {
+                dynamicText.textContent = currentWord.substring(0, charIndex - 1);
+                charIndex--;
+                typingDelay = 50;
+            } else {
+                dynamicText.textContent = currentWord.substring(0, charIndex + 1);
+                charIndex++;
+                typingDelay = 100;
+            }
+
+            if (!isDeleting && charIndex === currentWord.length) {
+                isDeleting = true;
+                typingDelay = 2000;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % words.length;
+                typingDelay = 500;
+            }
+
+            setTimeout(typeEffect, typingDelay);
+        }
+
+        // Enhanced smooth scroll with Web3 effects
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    const headerOffset = 80;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    // Add cyber effect during scroll
+                    const scrollGlow = document.querySelector('.scroll-glow');
+                    scrollGlow.classList.add('active');
+                    
+                    // Create cyber line effect
+                    const cyberLine = document.createElement('div');
+                    cyberLine.className = 'cyber-line';
+                    document.body.appendChild(cyberLine);
+                    
+                    // Animate scroll
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+
+                    // Remove effects after scroll
+                    setTimeout(() => {
+                        scrollGlow.classList.remove('active');
+                        cyberLine.classList.add('active');
+                        setTimeout(() => {
+                            cyberLine.remove();
+                        }, 1000);
+                    }, 1000);
+                }
+            });
+        });
+
+        // Scroll progress indicator
+        window.addEventListener('scroll', () => {
+            const scrollIndicator = document.querySelector('.scroll-indicator');
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            scrollIndicator.style.transform = `scaleX(${scrolled / 100})`;
+        });
+
+        // Section reveal animation
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('section-transition');
+            observer.observe(section);
+        });
+
+        window.addEventListener('load', typeEffect);
+
+        // Custom cursor functionality
+        const cursor = document.querySelector('.custom-cursor');
+        const cursorDot = document.querySelector('.custom-cursor-dot');
+        const cursorGlow = document.querySelector('.cursor-glow');
+        const cursorText = document.querySelector('.cursor-text');
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.transform = `translate(${e.clientX - 10}px, ${e.clientY - 10}px)`;
+            cursorDot.style.transform = `translate(${e.clientX - 2}px, ${e.clientY - 2}px)`;
+            cursorGlow.style.transform = `translate(${e.clientX - 20}px, ${e.clientY - 20}px)`;
+            cursorText.style.transform = `translate(${e.clientX + 15}px, ${e.clientY + 15}px)`;
+        });
+
+        // Hover effect on interactive elements
+        document.querySelectorAll('a, button, .glass-card, .hover-glow').forEach(element => {
+            element.addEventListener('mouseenter', () => {
+                cursor.classList.add('cursor-hover');
+                cursorText.classList.add('visible');
+            });
+            element.addEventListener('mouseleave', () => {
+                cursor.classList.remove('cursor-hover');
+                cursorText.classList.remove('visible');
+            });
+        });
+
+        // Click effect
+        document.addEventListener('mousedown', () => {
+            cursor.classList.add('cursor-click');
+        });
+        document.addEventListener('mouseup', () => {
+            cursor.classList.remove('cursor-click');
+        });
+
+        // Hide default cursor
+        document.body.style.cursor = 'none';
+    </script>
+</body>
+</html>
+
