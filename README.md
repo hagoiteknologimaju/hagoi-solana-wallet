@@ -167,7 +167,3 @@ This software is provided "as is" without warranty of any kind. Users are respon
 ## About
 
 Hagoi-Solana-Wallet is developed by Hagoi Teknologi Maju to provide secure and user-friendly access to the Solana blockchain. Our mission is to make cryptocurrency management accessible and secure for everyone through innovative desktop solutions.
-
----
-
-© 2025 Hagoi Teknologi Maju. All rights reserved.
