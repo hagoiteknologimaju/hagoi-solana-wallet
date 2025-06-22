@@ -1,0 +1,32 @@
+# Core Solana dependencies
+solana>=0.34.0
+base58>=2.1.0
+
+# Cryptography
+cryptography>=41.0.0
+
+# GUI Framework
+customtkinter>=5.2.0
+tkinter-tooltip>=2.0.0
+
+# Data visualization
+matplotlib>=3.7.0
+Pillow>=10.0.0
+
+# QR Code generation
+qrcode[pil]>=7.4.0
+
+# Wallet and crypto utilities
+mnemonic>=0.20
+
+# HTTP requests
+requests>=2.31.0
+urllib3>=2.0.0
+certifi>=2023.7.22
+
+# PyInstaller for building executable
+pyinstaller>=6.0.0
+auto-py-to-exe>=2.42.0
+
+# Additional utilities
+packaging>=23.0
