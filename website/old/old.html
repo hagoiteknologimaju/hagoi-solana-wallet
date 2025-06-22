@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hagoi Wallet - Web3 Solana Wallet</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: #0A0A0A;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #00F5A0 0%, #00D9F5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .neon-border {
+            border: 1px solid rgba(0, 245, 160, 0.2);
+            box-shadow: 0 0 20px rgba(0, 245, 160, 0.1);
+        }
+        .hover-glow:hover {
+            box-shadow: 0 0 30px rgba(0, 245, 160, 0.2);
+        }
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        .pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .5; }
+        }
+        .grid-bg {
+            background-image: linear-gradient(rgba(0, 245, 160, 0.1) 1px, transparent 1px),
+                            linear-gradient(90deg, rgba(0, 245, 160, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+        .company-badge {
+            background: linear-gradient(45deg, #00F5A0, #00D9F5);
+            animation: gradient 3s ease infinite;
+        }
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .typing-text {
+            display: inline-block;
+            position: relative;
+        }
+        .typing-text::after {
+            content: '|';
+            position: absolute;
+            right: -4px;
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        .typing-animation {
+            overflow: hidden;
+            white-space: nowrap;
+            animation: typing 3.5s steps(40, end);
+        }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+    </style>
+</head>
+<body class="text-white">
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass-card">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <img src="https://raw.githubusercontent.com/solana-labs/token-list/main/assets/mainnet/So11111111111111111111111111111111111111112/logo.png" alt="Solana Logo" class="w-8 h-8">
+                    <span class="text-xl font-bold gradient-text">Hagoi</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#features" class="hover:text-[#00F5A0] transition">Features</a>
+                    <a href="#security" class="hover:text-[#00F5A0] transition">Security</a>
+                    <a href="#software" class="hover:text-[#00F5A0] transition">Software</a>
+                    <a href="#company" class="hover:text-[#00F5A0] transition">Company</a>
+                    <a href="#download" class="hover:text-[#00F5A0] transition">Download</a>
+                </div>
+                <a href="#download" class="bg-[#00F5A0] hover:bg-[#00D9F5] text-black px-6 py-2 rounded-lg transition hover-glow">
+                    Launch App
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-6 grid-bg">
+        <div class="container mx-auto text-center">
+            <div class="inline-block mb-6">
+                <span class="company-badge px-4 py-2 rounded-full text-sm font-semibold text-black">
+                    Powered by Hagoi Teknologi Maju
+                </span>
+            </div>
+            <h1 class="text-6xl md:text-7xl font-bold mb-8">
+                <span class="typing-animation">Web3 Wallet</span>
+                <br>
+                <span class="gradient-text typing-text" id="dynamic-text">Reimagined</span>
+            </h1>
+            <p class="text-gray-400 text-xl mb-12 max-w-2xl mx-auto typing-animation" style="animation-delay: 1s">
+                Experience the future of decentralized finance with military-grade security and seamless Web3 integration.
+            </p>
+            <div class="flex justify-center space-x-4">
+                <a href="#download" class="bg-[#00F5A0] hover:bg-[#00D9F5] text-black px-8 py-3 rounded-lg text-lg font-semibold transition hover-glow">
+                    Download
+                </a>
+                <a href="#software" class="glass-card px-8 py-3 rounded-lg text-lg font-semibold transition hover-glow">
+                    View Software
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Section -->
+    <section id="company" class="py-20 px-6">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Powered by Innovation</h2>
+                <p class="text-gray-400">Backed by Hagoi Teknologi Maju and Hagoi Cloud</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="glass-card p-6 rounded-xl neon-border floating">
+                        <h3 class="text-2xl font-semibold mb-4 text-[#00F5A0]">Hagoi Teknologi Maju</h3>
+                        <p class="text-gray-400">Leading the future of Web3 technology with cutting-edge solutions and military-grade security.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl neon-border floating" style="animation-delay: 0.5s">
+                        <h3 class="text-2xl font-semibold mb-4 text-[#00F5A0]">Hagoi Cloud</h3>
+                        <p class="text-gray-400">Enterprise-grade cloud infrastructure ensuring maximum security and performance for your digital assets.</p>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-r from-[#00F5A0]/20 to-transparent rounded-xl"></div>
+                    <div class="glass-card p-8 rounded-xl relative z-10 neon-border">
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-3 h-3 bg-[#00F5A0] rounded-full pulse"></div>
+                                <span class="text-gray-300">Enterprise Security</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-3 h-3 bg-[#00F5A0] rounded-full pulse" style="animation-delay: 0.2s"></div>
+                                <span class="text-gray-300">Cloud Infrastructure</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-3 h-3 bg-[#00F5A0] rounded-full pulse" style="animation-delay: 0.4s"></div>
+                                <span class="text-gray-300">Web3 Innovation</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-3 h-3 bg-[#00F5A0] rounded-full pulse" style="animation-delay: 0.6s"></div>
+                                <span class="text-gray-300">Global Network</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Software Showcase -->
+    <section id="software" class="py-20 px-6 grid-bg">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Software Preview</h2>
+                <p class="text-gray-400">Experience the future of Web3 wallet management</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-r from-[#00F5A0]/20 to-transparent rounded-xl"></div>
+                    <div class="glass-card p-8 rounded-xl relative z-10 neon-border floating">
+                        <img src="https://raw.githubusercontent.com/solana-labs/token-list/main/assets/mainnet/So11111111111111111111111111111111111111112/logo.png" alt="Software Preview" class="w-full h-auto rounded-lg">
+                    </div>
+                </div>
+                <div class="space-y-8">
+                    <div class="glass-card p-6 rounded-xl neon-border floating" style="animation-delay: 0.2s">
+                        <h3 class="text-2xl font-semibold mb-4 text-[#00F5A0]">Modern Interface</h3>
+                        <p class="text-gray-400">Clean, intuitive design focused on user experience and functionality.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl neon-border floating" style="animation-delay: 0.4s">
+                        <h3 class="text-2xl font-semibold mb-4 text-[#00F5A0]">Real-time Analytics</h3>
+                        <p class="text-gray-400">Track your portfolio performance with advanced analytics and charts.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl neon-border floating" style="animation-delay: 0.6s">
+                        <h3 class="text-2xl font-semibold mb-4 text-[#00F5A0]">Web3 Integration</h3>
+                        <p class="text-gray-400">Seamlessly connect with dApps and DeFi protocols.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 px-6">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-16">Core Features</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-card p-8 rounded-xl neon-border floating">
+                    <div class="w-12 h-12 bg-[#00F5A0]/10 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-[#00F5A0]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Military Security</h3>
+                    <p class="text-gray-400">Advanced encryption with .hagoi file format protection.</p>
+                </div>
+                <div class="glass-card p-8 rounded-xl neon-border floating" style="animation-delay: 0.2s">
+                    <div class="w-12 h-12 bg-[#00F5A0]/10 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-[#00F5A0]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Lightning Fast</h3>
+                    <p class="text-gray-400">Optimized for Solana's high-speed blockchain.</p>
+                </div>
+                <div class="glass-card p-8 rounded-xl neon-border floating" style="animation-delay: 0.4s">
+                    <div class="w-12 h-12 bg-[#00F5A0]/10 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-[#00F5A0]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">User Experience</h3>
+                    <p class="text-gray-400">Intuitive interface for both beginners and experts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security Section -->
+    <section id="security" class="py-20 px-6 grid-bg">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-16">Security First</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6">Your Keys, Your Control</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-[#00F5A0] mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span>Private keys never leave your device</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-[#00F5A0] mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span>Military-grade .hagoi file encryption</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-[#00F5A0] mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span>Open-source for transparency</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-[#00F5A0] mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span>Regular security updates</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="glass-card p-8 rounded-xl neon-border floating">
+                    <img src="https://raw.githubusercontent.com/solana-labs/token-list/main/assets/mainnet/So11111111111111111111111111111111111111112/logo.png" alt="Security Illustration" class="w-full h-auto rounded-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="py-20 px-6">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-8">Ready to Launch?</h2>
+            <p class="text-gray-400 text-xl mb-12 max-w-2xl mx-auto">
+                Download Hagoi Wallet and start your Web3 journey with military-grade security.
+            </p>
+            <div class="flex justify-center space-x-4">
+                <a href="#" class="bg-[#00F5A0] hover:bg-[#00D9F5] text-black px-8 py-3 rounded-lg text-lg font-semibold transition hover-glow">
+                    Download for Windows
+                </a>
+                <a href="#" class="glass-card px-8 py-3 rounded-lg text-lg font-semibold transition hover-glow">
+                    View on GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 glass-card">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-3 mb-4 md:mb-0">
+                    <img src="https://raw.githubusercontent.com/solana-labs/token-list/main/assets/mainnet/So11111111111111111111111111111111111111112/logo.png" alt="Solana Logo" class="w-8 h-8">
+                    <span class="text-xl font-bold gradient-text">Hagoi</span>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-[#00F5A0] transition">GitHub</a>
+                    <a href="#" class="text-gray-400 hover:text-[#00F5A0] transition">Documentation</a>
+                    <a href="#" class="text-gray-400 hover:text-[#00F5A0] transition">Support</a>
+                </div>
+            </div>
+            <div class="mt-8 text-center text-gray-400">
+                <p>© 2024 Hagoi Wallet. Powered by Hagoi Teknologi Maju & Hagoi Cloud</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Dynamic text animation
+        const words = ['Reimagined', 'Innovative', 'Secure', 'Future', 'Powerful'];
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typingDelay = 100;
+
+        function typeEffect() {
+            const currentWord = words[wordIndex];
+            const dynamicText = document.getElementById('dynamic-text');
+            
+            if (isDeleting) {
+                dynamicText.textContent = currentWord.substring(0, charIndex - 1);
+                charIndex--;
+                typingDelay = 50;
+            } else {
+                dynamicText.textContent = currentWord.substring(0, charIndex + 1);
+                charIndex++;
+                typingDelay = 100;
+            }
+
+            if (!isDeleting && charIndex === currentWord.length) {
+                isDeleting = true;
+                typingDelay = 2000; // Pause at end
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % words.length;
+                typingDelay = 500; // Pause before typing next word
+            }
+
+            setTimeout(typeEffect, typingDelay);
+        }
+
+        // Start the typing animation when the page loads
+        window.addEventListener('load', typeEffect);
+    </script>
+</body>
+</html>
